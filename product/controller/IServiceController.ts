@@ -1,4 +1,4 @@
 import { IBaseController } from "@BaseTypes/controller/IBaseController";
-import { Product } from "../model/Product";
+import { Service } from "../model/Service";
 
-export interface IProductController extends IBaseController<Product> {}
+export interface IServiceController extends IBaseController<Service> { }
