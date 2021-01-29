@@ -6,6 +6,7 @@ export interface IUserController extends IBaseController<Service> {
    login(username: string, password: string):Promise<LoginResp>;
    register(user:User):Promise<void>;
    me(): Promise<User>;
+
 }
 
 export interface LoginResp {

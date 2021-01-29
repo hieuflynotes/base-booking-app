@@ -4,4 +4,7 @@ import { User } from "../../user/model/User";
 
 export class Company extends BaseModel {
      name ?: string;
+     address ?: string;
+     phone ?: string;
+     email ?: string;
 }
