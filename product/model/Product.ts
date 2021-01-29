@@ -6,5 +6,5 @@ export class Product extends BaseModel {
     price?: number;
     images ?: string;
     categoryId ?: string;
-    salePrice ?: string;
+    salePrice ?: number;
 }
