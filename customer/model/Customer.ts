@@ -11,3 +11,8 @@ export class Customer extends BaseModel {
    companyId?: string;
    note?: string;
 }
+
+export enum  Gender{
+   Female = "FEMALE",
+   Male = "MALE"
+}
