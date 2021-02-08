@@ -8,18 +8,16 @@ export class OrderService extends BaseModel {
    serviceId?: string  = __(new _Define()
       .setYup(Yup.string().uuid())
    );
-	price?: number = __(new _Define()
+	salePrice?: number = __(new _Define()
       .setYup(Yup.number())
    );
 	quantity?: number = __(new _Define()
       .setYup(Yup.number())
    );
-   userId?: string = __(new _Define()
+   staffId?: string = __(new _Define()
       .setYup(Yup.string().uuid())
    );
-   orderId?: string = __(new _Define()
-      .setYup(Yup.string().uuid())
-   );
+
    duration?: number = __(new _Define()
       .setYup(Yup.string().uuid())
    );
@@ -27,6 +25,10 @@ export class OrderService extends BaseModel {
       .setYup(Yup.date())
    );
 
+   orderId?: string = __(new _Define()
+      .setYup(Yup.string().uuid())
+   );
+
    service?: Service;
-   user?: User;
+   staff?: User;
 }

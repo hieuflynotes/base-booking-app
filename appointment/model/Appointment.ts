@@ -1,5 +1,7 @@
 import { _Define, __ } from "@BaseTypes/lib/SchemaBuilderAle";
 import { BaseModel } from "@BaseTypes/model/BaseModel";
+import { Customer } from "@BookingAppTypes/customer/model/Customer";
+import { Order } from "@BookingAppTypes/order/model/Order";
 import * as Yup from "yup";
 export class Appointment extends BaseModel {
 	companyId ?: string = __(new _Define()
@@ -14,16 +16,19 @@ export class Appointment extends BaseModel {
 	toAt ?: Date = __(new _Define()
 		.setYup(Yup.date())
 	);
-	userId ?: string =  __(new _Define()
-		.setYup(Yup.string().uuid())
-	);
+	
 	status ?: AppointmentStatus =  __(new _Define()
 		.setYup(Yup.string().required().trim().default(AppointmentStatus.CANCEL))
 	);
 
-	
+	orderId?: string;
+	order?: Order;
+	customer? : Customer;
 }
 
 export enum AppointmentStatus {
-	CANCEL ="CANCEL"
+	NEW = "NEW",
+	ARRIVED = "ARRIVED",
+	CANCEL ="CANCEL",
+	COMPLETED = "COMPLETED"
 }
