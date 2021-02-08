@@ -13,7 +13,7 @@ export interface IAppointmentController extends IBaseController<Appointment> {
 	): Promise<Appointment>;
 }
 
-type AppointmentGroupByDate = {
+export type AppointmentGroupByDate = {
 	date: Date;
 	data: Appointment[];
 };
