@@ -4,11 +4,10 @@ import { User } from "../model/User";
 
 export interface IUserController extends IBaseController<Service> {
    login(username: string, password: string):Promise<LoginResp>;
-   register(user:User):Promise<void>;
+   register(user:User):Promise<User>;
    me(): Promise<User>;
-
 }
 
-export interface LoginResp {
+export interface LoginResp extends User {
    jwt: string;
 }
