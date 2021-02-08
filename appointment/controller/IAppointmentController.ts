@@ -7,9 +7,17 @@ export interface IAppointmentController extends IBaseController<Appointment> {
 	getGroupAppointmentByDate(
 		params: ListFilter<Appointment> & { from: Date; to: Date }
 	): Promise<Paging<AppointmentGroupByDate>>;
+
+	createAppointmentWithListService(
+		params: AppointmentWithListService
+	): Promise<Appointment>;
 }
 
 type AppointmentGroupByDate = {
 	date: Date;
 	data: Appointment[];
 };
+
+export interface AppointmentWithListService extends Appointment {
+	serviceIds: string[];
+}
